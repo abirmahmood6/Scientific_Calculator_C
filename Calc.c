@@ -26,16 +26,27 @@ printf("12. Modulus\n");
 
 printf ("\n       Press 0 to QUIT\n");
 printf ("-------------------------------\n");
-  printf ("Choice:");
+
+  do{
+  printf ("\nChoice:");
   scanf ("%d", &choice);
+  
+if (choice < 0 || choice >12) {
+    printf ("Please choose between 1-12");
+  
+} else {
+
+
+
   switch (choice) {
+
    case 1: 
       printf ("X:");
       scanf("%d", &x);
       printf ("Y:");
       scanf ("%d", &y);
  result= x + y;
- printf ("Result: %.2f", result);
+ printf ("Result: %.2f\n", result);
  break;
 
   case 2: 
@@ -44,7 +55,7 @@ printf ("-------------------------------\n");
       printf ("Y:");
       scanf ("%d", &y);
  result= x - y;
- printf ("Result: %.2f", result);
+ printf ("Result: %.2f\n", result);
  break;
 
   case 3: 
@@ -53,22 +64,87 @@ printf ("-------------------------------\n");
       printf ("Y:");
       scanf ("%d", &y);
  result= x * y;
- printf ("Result: %.2f", result);
+ printf ("Result: %.2f\n", result);
  break;
 
   case 4: 
       printf ("X:");
-      scanf("%d", &x);
+      scanf("%f", &a);
       printf ("Y:");
-      scanf ("%d", &y);
- result= x / y;
- printf ("Result: %.2f", result);
+      scanf ("%f", &b);
+ result= a / b;
+ printf ("Result: %.2f\n", result);
  break;
 
+  case 5: 
+      printf ("X:");
+      scanf("%d", &x);
+     
+ result= sqrt (x);
+ printf ("Result: %.2f\n", result);
+ break;
+
+  case 6: 
+      printf ("X:");
+      scanf("%d", &x);
+ result= cbrt (x);
+ printf ("Result: %.2f\n", result);
+ break;
+
+  case 7: 
+  printf ("X:");  
+  scanf ("%d", &x); 
+ result=  pow(x, 2);
+ printf ("Result: %.2f\n", result);
+ break;
+ 
+
+  case 8: 
+  printf ("X:");  
+  scanf ("%d", &x); 
+ result=  pow(x, 3);
+ printf ("Result: %.2f\n", result);
+ break;
+ 
+
+  case 9: 
+  printf ("X:");  
+  scanf ("%d", &x);
+  printf ("Y:");
+  scanf ("%d", &y); 
+ result=  pow(x, y);
+ printf ("Result: %.2f\n", result);
+ break;
+ 
+ case 10:
+ printf ("X:");
+ scanf ("%f", &a);
+ result= a / 100;
+ printf ("Result: %.2f\n", result);
+break;
+
+case 11: 
+printf ("X:");
+scanf("%f", &a);
+result= log10(a);
+printf ("Result: %.2f\n", result);
+break;
+
+  case 12:
+ printf ("X:");
+ scanf ("%d", &x);
+ printf ("Y:");
+ scanf ("%d", &y);
+ result= x % y;
+ printf ("Result: %.2f\n", result);
+break;
+
   }                                                                       
+}
 
+  } while (choice!=0);
 
-
+ printf ("      \nThank you\n\n");
 
 
     return 0;
