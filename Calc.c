@@ -2,15 +2,14 @@
 #include <math.h>
 #include <stdlib.h>
 
-
 int main () {
 int x, y, choice;
 float a, b, result;
 
-printf ("\n******************************\n");
+printf ("\n*******************************\n");
 printf ("     Welcome to Calculator\n");
-printf ("******************************\n");
-printf ("Select your choice:\n");
+printf ("*******************************\n");
+printf ("Choose your operation:\n");
 printf("1. Addition\n");
 printf("2. Substraction\n");
 printf("3. Multiplication\n");
@@ -23,129 +22,137 @@ printf("9. X ^ Y\n");
 printf("10. Percentage %%\n");
 printf("11. log10(x)\n");
 printf("12. Modulus\n");
+printf ("")
 
 printf ("\n       Press 0 to QUIT\n");
-printf ("-------------------------------\n");
+printf ("------------------------------\n");
 
-  do{
-  printf ("\nChoice:");
-  scanf ("%d", &choice);
+do{
+printf ("\nChoice:");
+scanf ("%d", &choice);
   
 if (choice < 0 || choice >12) {
-    printf ("Please choose between 1-12");
-  
-} else {
+printf ("Choose operations between 1-12\n"); 
+} 
+else {
+ switch (choice) {
 
+case 1: 
+printf ("--Addition--\n");
+printf ("X:");
+scanf("%f", &a);
+printf ("Y:");
+scanf ("%f", &b);
+result= a + b;
+printf ("Result: %.2f\n", result);
+break;
 
+case 2: 
+printf ("--Substraction--\n");
+printf ("X:");
+scanf("%f", &a);
+printf ("Y:");
+scanf ("%f", &b);
+result= a - b;
+printf ("Result: %.2f\n", result);
+break;
 
-  switch (choice) {
+case 3: 
+printf ("--Multiplication--\n");
+printf ("X:");
+scanf("%f", &a);
+printf ("Y:");
+scanf ("%f", &b);
+result= a * b;
+printf ("Result: %.2f\n", result);
+break;
 
-   case 1: 
-      printf ("X:");
-      scanf("%d", &x);
-      printf ("Y:");
-      scanf ("%d", &y);
- result= x + y;
- printf ("Result: %.2f\n", result);
- break;
+case 4: 
+printf ("--Division--\n");
+printf ("X:");
+scanf("%f", &a);
+printf ("Y:");
+scanf ("%f", &b);
+result= a / b;
+printf ("Result: %.2f\n", result);
+break;
 
-  case 2: 
-      printf ("X:");
-      scanf("%d", &x);
-      printf ("Y:");
-      scanf ("%d", &y);
- result= x - y;
- printf ("Result: %.2f\n", result);
- break;
+case 5: 
+printf ("--Square Root--\n");
+printf ("X:");
+scanf("%d", &x);
+result= sqrt (x);
+printf ("Result: %.2f\n", result);
+break;
 
-  case 3: 
-      printf ("X:");
-      scanf("%d", &x);
-      printf ("Y:");
-      scanf ("%d", &y);
- result= x * y;
- printf ("Result: %.2f\n", result);
- break;
+case 6: 
+printf ("--Cube Root--\n");
+printf ("X:");
+scanf("%d", &x);
+result= cbrt (x);
+printf ("Result: %.2f\n", result);
+break;
 
-  case 4: 
-      printf ("X:");
-      scanf("%f", &a);
-      printf ("Y:");
-      scanf ("%f", &b);
- result= a / b;
- printf ("Result: %.2f\n", result);
- break;
-
-  case 5: 
-      printf ("X:");
-      scanf("%d", &x);
-     
- result= sqrt (x);
- printf ("Result: %.2f\n", result);
- break;
-
-  case 6: 
-      printf ("X:");
-      scanf("%d", &x);
- result= cbrt (x);
- printf ("Result: %.2f\n", result);
- break;
-
-  case 7: 
-  printf ("X:");  
-  scanf ("%d", &x); 
- result=  pow(x, 2);
- printf ("Result: %.2f\n", result);
- break;
+case 7: 
+printf ("--X^2--\n");
+printf ("X:");  
+scanf ("%d", &x); 
+result=  pow(x, 2);
+printf ("Result: %.2f\n", result);
+break;
  
+case 8: 
+printf ("--X^3--\n");
+printf ("X:");  
+scanf ("%d", &x); 
+result=  pow(x, 3);
+printf ("Result: %.2f\n", result);
+break; 
 
-  case 8: 
-  printf ("X:");  
-  scanf ("%d", &x); 
- result=  pow(x, 3);
- printf ("Result: %.2f\n", result);
- break;
+case 9: 
+printf ("--X^Y--\n");
+printf ("X:");  
+scanf ("%d", &x);
+printf ("Y:");
+scanf ("%d", &y); 
+result=  pow(x, y);
+printf ("Result: %.2f\n", result);
+break;
  
-
-  case 9: 
-  printf ("X:");  
-  scanf ("%d", &x);
-  printf ("Y:");
-  scanf ("%d", &y); 
- result=  pow(x, y);
- printf ("Result: %.2f\n", result);
- break;
- 
- case 10:
- printf ("X:");
- scanf ("%f", &a);
- result= a / 100;
- printf ("Result: %.2f\n", result);
+case 10:
+printf ("--Percentage--\n");
+printf ("X:");
+scanf ("%f", &a);
+result= a / 100;
+printf ("Result: %.2f\n", result);
 break;
 
 case 11: 
+printf ("--log10(x)--\n");
 printf ("X:");
 scanf("%f", &a);
 result= log10(a);
 printf ("Result: %.2f\n", result);
 break;
 
-  case 12:
- printf ("X:");
- scanf ("%d", &x);
- printf ("Y:");
- scanf ("%d", &y);
- result= x % y;
- printf ("Result: %.2f\n", result);
+case 12:
+printf ("--Modulus--\n");
+printf ("X:");
+scanf ("%d", &x);
+printf ("Y:");
+scanf ("%d", &y);
+result= x % y;
+printf ("Result: %.2f\n", result);
 break;
 
   }                                                                       
-}
+ }
 
-  } while (choice!=0);
-
- printf ("      \nThank you\n\n");
+} while (choice!=0);
 
 
-    return 0;
+printf ("      \nThank you for using the calculator!\n\n\n"); 
+exit (0);
+
+return 0;
 }
