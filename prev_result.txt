@@ -1,4 +1,6 @@
---Addition--
- X: 50.0 	 Y: 50.0 
- result: 100.00
+--Modulus--
+ X: 20 	 Y: 4 
+ result: 0.00
+
+100.00
 

@@ -5,7 +5,7 @@
 int main () {
   FILE *pr= fopen("/Users/abirmahmood/Documents/Projects/Scientific Calculator Project/prev_result.txt", "r+");
   
-//remove it later
+//comment it later
 if (pr== NULL) {
   printf ("Error");
 }         
@@ -15,8 +15,7 @@ if (pr== NULL) {
 int x, y, choice;
 float a, b, result;
 char prev_result [50];
-
-
+double c, result2;
 
 printf ("\n*******************************\n");
 printf ("     Welcome to Calculator\n");
@@ -34,17 +33,20 @@ printf("9. X ^ Y\n");
 printf("10. Percentage %%\n");
 printf("11. log10(x)\n");
 printf("12. Modulus\n");
-//add sin cos tan
+printf("13. Sin(x)\n");
+printf("14. Cos(x)\n");
+printf("15. Tan(x)\n");
+//add sin cos tan to complete the program
 
 printf ("\n      Press 0 to QUIT\n");
-printf ("Press 13 for previous results\n");
+printf ("Press 16 for previous results\n");
 printf ("-----------------------------\n");
 
 do{
 printf ("\nChoice:");
 scanf ("%d", &choice);
   
-if (choice < 0 || choice >13) {
+if (choice < 0 || choice >16) {
 printf ("Choose operations between 1-12\n"); 
 } 
 
@@ -171,7 +173,31 @@ printf ("Result: %.2f\n", result);
 fprintf (pr, "--Modulus--\n X: %d \t Y: %d \n result: %.2f\n\n", x, y, result);
 break;
 
-case 13:printf ("Previous result: \n\n");
+case 13: 
+printf("--Sin(x)--\n");
+printf ("X:");
+scanf ("%lf", &c);
+result2= sin(c * 3.14159/180);
+printf ("Result: %.2lf\n", result2);
+break;
+
+case 14: 
+printf("--Cos(x)--\n");
+printf ("X:");
+scanf ("%lf", &c);
+result2= cos(c * 3.14159/180);
+printf ("Result: %.2lf\n", result2);
+break;
+
+case 15: 
+printf("--Tan(x)--\n");
+printf ("X:");
+scanf ("%lf", &c);
+result2= tan(c * 3.14159/180);
+printf ("Result: %.2lf\n", result2);
+break;
+
+case 16:printf ("Previous result: \n\n");
 while (fgets (prev_result, 50, pr) != NULL) {
 printf ("%s", prev_result);
 }
