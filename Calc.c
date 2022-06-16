@@ -3,15 +3,18 @@
 #include <stdlib.h>
 
 int main () {
-  FILE *pr= fopen("/Users/abirmahmood/Documents/Projects/Scientific Calculator Project/prev_result.txt", "r+");
-  
-//comment it later
+
+FILE *pr= fopen("/Users/abirmahmood/Documents/Projects/Scientific Calculator Project/prev_result.txt", "r+");
+
+/*
 if (pr== NULL) {
-  printf ("Error");
+  printf ("File Error");
 }         
  else {
   printf ("File is opened");
- }
+ } 
+*/
+
 int x, y, choice;
 float a, b, result;
 char prev_result [50];
@@ -36,7 +39,6 @@ printf("12. Modulus\n");
 printf("13. Sin(x)\n");
 printf("14. Cos(x)\n");
 printf("15. Tan(x)\n");
-//add sin cos tan to complete the program
 
 printf ("\n      Press 0 to QUIT\n");
 printf ("Press 16 for previous results\n");
@@ -47,11 +49,11 @@ printf ("\nChoice:");
 scanf ("%d", &choice);
   
 if (choice < 0 || choice >16) {
-printf ("Choose operations between 1-12\n"); 
+printf ("Choose operations between 1-16\n"); 
 } 
 
 else {
- switch (choice) {
+switch (choice) {
 
 case 1: 
 printf ("--Addition--\n");
@@ -122,7 +124,7 @@ scanf ("%d", &x);
 result=  pow(x, 2);
 printf ("Result: %.2f\n", result);
 fprintf (pr, "--X^2--\n X: %d  \n result: %.2f\n\n", x, result);
- break;
+break;
 
 case 8: 
 printf ("--X^3--\n");
@@ -179,6 +181,7 @@ printf ("X:");
 scanf ("%lf", &c);
 result2= sin(c * 3.14159/180);
 printf ("Result: %.2lf\n", result2);
+fprintf (pr,"--Sin(x)--\n X: %lf \n result %.2lf\n\n", c, result2);
 break;
 
 case 14: 
@@ -187,6 +190,7 @@ printf ("X:");
 scanf ("%lf", &c);
 result2= cos(c * 3.14159/180);
 printf ("Result: %.2lf\n", result2);
+fprintf (pr,"--Cos(x)--\n X: %lf \n result %.2lf\n\n", c, result2);
 break;
 
 case 15: 
@@ -195,6 +199,7 @@ printf ("X:");
 scanf ("%lf", &c);
 result2= tan(c * 3.14159/180);
 printf ("Result: %.2lf\n", result2);
+fprintf (pr,"--Tan(x)--\n X: %lf \n result %.2lf\n\n", c, result2);
 break;
 
 case 16:printf ("Previous result: \n\n");
@@ -202,11 +207,11 @@ while (fgets (prev_result, 50, pr) != NULL) {
 printf ("%s", prev_result);
 }
 break;
+
   }                                                                       
  }
 
 } while (choice!=0);
-
 
 printf ("      \nThank you for using the calculator!\n\n\n"); 
 fclose (pr);
