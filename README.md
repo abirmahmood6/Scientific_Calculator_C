@@ -7,6 +7,6 @@
 
 
 
-#👨‍💻 User Stories
+# User Stories 👨‍💻
 - [x] User can choose and enter a choice between 1-16 functions in the calculator, input values for X and Y and see the result. 
 - [x] User can see their previous results
