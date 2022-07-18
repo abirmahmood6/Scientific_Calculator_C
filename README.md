@@ -1,4 +1,4 @@
-# Scientific-Calculator-C
+### Scientific-Calculator-C
 
 🔶 Developed a fully featured scientific calculator using
  C (Programming language) that is capable of performing basic arithmetic operations, square and cubic root, exponents, logarithms, trig functions, modulus
