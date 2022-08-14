@@ -1,0 +1,8 @@
+--Addition--
+ X: 5.0 	 Y: 5.0 
+ result: 10.00
+
+--Cube Root--
+ X: 125 
+ result: 5.00
+

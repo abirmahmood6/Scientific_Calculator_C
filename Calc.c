@@ -12,8 +12,8 @@ if (pr== NULL) {
 }         
  else {
   printf ("File is opened");
- } 
-*/
+ } */
+
 
 int x, y, choice;
 float a, b, result;
